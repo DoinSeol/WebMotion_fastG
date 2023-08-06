@@ -1,0 +1,31 @@
+body {
+	min-height: 100vh;
+}
+.btn {
+  background-color: chocolate;
+  box-shadow: 
+    0 14px 0 brown,
+    0 20px 14px rgba(0,0,0,.2);
+}
+.btn .loader {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 4px solid white;
+}
+.btn.loading {
+  box-shadow: 
+    0 4px 0 brown,    
+    0 4px 4px rgba(0,0,0,.2);
+}
+.btn.loading .text {
+  
+}
+.btn.loading .loader {
+  
+}
+
+@keyframes spinner {
+  0% {}
+  100% {}
+}
