@@ -1,5 +1,6 @@
-const btnEls = document.querySelectorAll('.btn')
+const btnEl = document.querySelectorAll('.btn');
 // ...
-btnEl.addEventListener('click', () => {
-  btnEl.classList.add('loading')  
+btnEl[0].addEventListener('click', () => {
+  alert("Click");
+  btnEl[0].classList.add('loading'); 
 })
