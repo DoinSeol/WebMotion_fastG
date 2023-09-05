@@ -1,0 +1,166 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+/* reset CSS */
+* {margin:0; padding: 0; box-sizing: border-box;}
+ul, ol {list-style: none;}
+a {text-decoration: none;}
+
+/* flex 를 활용한 중앙 배치 -----------------------------------------*/
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* position 을 활용한 중앙 배치 */
+.wrap {
+  width: 340px;
+  padding: 30px;
+  background-color: #fff;
+  /* position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%); */
+  border-radius: 10px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* flex를 활용한 버튼 좌우 배치 --------------------------------- */
+.wrap .menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* float 를 활용한 버튼 좌우 배치*/
+/* float 사용 시 부모 요소에 after 처리 필수 */
+/* .wrap .menu::after {
+  content: "";
+  display: block;
+  clear: both;
+} */
+
+/* float 특성 : float된 자식요소를 부모가 인지 못함 */
+/* .wrap .menu a:nth-of-type(1) {float: left;}
+.wrap .menu a:nth-of-type(2) {float: right;} */
+
+
+
+.wrap .menu a { font-size: 20px; color: #555;}
+
+.wrap .profile {
+  width: 100%;
+  text-align: center;
+}
+
+.wrap .profile img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 5px 5px 30px rgba(147, 225, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.wrap .profile h1 {
+  font: bold 22px/1 "arial";
+  color: #555;
+  margin-bottom: 5px;
+}
+.wrap .profile p {
+  font: 12px/1 "arial";
+  color: #bbb;
+  margin-bottom: 30px;
+}
+
+
+
+.wrap .profile .btnView {
+  display: block;
+  width: 180px;
+  height: 32px;
+  margin: 0px auto 20px;
+  /* flex를 활용한 텍스트 중앙 배치 --------------------------------- */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* line-height로 텍스트 중앙 배치 */
+  /* font: bold 12px/32px "arial"; */
+  font: bold 12px/1 "arial";
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  color: #fff;
+  border-radius: 16px;
+  background: linear-gradient(45deg, aqua, rgb(130, 220, 255));
+  box-shadow: 5px 10px 20px rgba(147, 225, 255, 0.7);
+}
+
+.wrap .contact {
+  margin-bottom: 25px;
+}
+.wrap .contact li {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.wrap .contact li:last-child {
+  border-bottom: none;
+}
+.wrap .contact li i {
+  width: 20%;
+  text-align: center;
+  color: #555;
+  font-size: 15px;
+  text-shadow: 2px 2px 2px #ddd;
+}
+
+.wrap .contact li span {
+  font: 11px/1 "orbitron";
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.wrap .others {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0px; /*자식요소의 inline-block 시 마진이 생기는 오류 제거*/
+  margin-bottom: 20px;
+}
+.wrap .others a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 10px;
+  opacity: 0.3;
+}
+.wrap .others a.on {opacity: 1;}
+.wrap .others a:nth-of-type(1){ background-color: #00ffff; box-shadow: 5px 5px 10px rgba(0, 255, 255, 0.5);}
+.wrap .others a:nth-of-type(2){ background-color: #56e9d5; box-shadow: 5px 5px 10px rgba(86, 233, 213, 0.5);}
+.wrap .others a:nth-of-type(3){ background-color: #ff69b4; box-shadow: 5px 5px 10px rgba(255, 105, 180, 0.5);}
+.wrap .others a:nth-of-type(4){ background-color: #9d2fc9; box-shadow: 5px 5px 10px rgba(157, 47, 201, 0.5); }
+
+
+
+/* member1 custom */
+.member1 {background-color: lightcyan;}
+.member1 .wrap .profile img {box-shadow: 5px 10px 20px rgba(147, 225, 255, 0.7);}
+.member1 .wrap .profile .btnView { background: linear-gradient(45deg, aqua, rgb(130, 220, 255)); box-shadow: 5px 10px 20px rgba(147, 225, 255, 0.7);}
+
+/* member1 custom */
+.member2 {background-color: #bcfff6;}
+.member2 .wrap .profile img {box-shadow: 5px 10px 20px rgba(93, 211, 195, 0.7);}
+.member2 .wrap .profile .btnView { background: linear-gradient(45deg, #56e9d5, #56bfe9); box-shadow: 5px 10px 20px rgba(93, 211, 195, 0.7);}
+
+/* member1 custom */
+.member3 {background-color: #ffa2d1;}
+.member3 .wrap .profile img {box-shadow: 5px 10px 20px rgba(197, 87, 142, 0.7);}
+.member3 .wrap .profile .btnView { background: linear-gradient(45deg, #ff69b4, #ff827d); box-shadow: 5px 10px 20px rgba(197, 87, 142, 0.7);}
+
+/* member1 custom */
+.member4 {background-color: #da7cff;}
+.member4 .wrap .profile img {box-shadow: 5px 10px 20px rgba(141, 47, 179, 0.7);}
+.member4 .wrap .profile .btnView { background: linear-gradient(45deg, #9d2fc9, #8519ff); box-shadow: 5px 10px 20px rgba(141, 47, 179, 0.7);}

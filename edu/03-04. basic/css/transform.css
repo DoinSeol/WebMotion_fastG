@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+section {
+  width: 200px;
+  height: 200px; 
+  border: 1px solid #000;
+  float: left;
+  margin: 50px 70px;
+}
+
+.box {margin:50px 0px;}
+.box::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+section article {
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+
+/* transform :: 2D */
+section.trans_2D article {
+  background-color: blue;
+}
+section.trans_2D:nth-of-type(1) article {
+  transform: scale(1.2);
+}
+section.trans_2D:nth-of-type(2) article {
+  /* transform: skewX(-20deg); */
+  transform: skewY(-20deg);
+}
+section.trans_2D:nth-of-type(3) article {
+  transform: translateX(50%);
+}
+section.trans_2D:nth-of-type(4) article {
+  transform: rotate(45deg);
+}
+
+
+/* transform :: 3D */
+section.trans_3D {
+  perspective: 400px;
+}
+section.trans_3D article {
+  background-color: orange;
+}
+section.trans_3D:nth-of-type(1) article {
+  transform: rotateX(45deg);
+}
+section.trans_3D:nth-of-type(2) article {
+  transform: rotateY(45deg);
+}
+section.trans_3D:nth-of-type(3) article {
+  transform: translateZ(-100px)
+}
+section.trans_3D:nth-of-type(4) article {
+  transform: translateZ(100px);
+}
+
+
+/* transform-origin 중심축 변경 */
+section.trans_origin {
+  perspective: 1200px;
+}
+section.trans_origin article {
+  background-color:hotpink; 
+}
+section.trans_origin:nth-of-type(1) article {
+  transform: rotateY(120deg);
+  transform-origin: center center; /**/
+}
+section.trans_origin:nth-of-type(2) article {
+  transform: rotateY(120deg);
+  transform-origin: left center;
+}
+section.trans_origin:nth-of-type(3) article {
+  transform: rotateY(120deg);
+  transform-origin: right center;
+}
+section.trans_origin:nth-of-type(4) article {
+  transform: rotateX(120deg);
+  transform-origin: center bottom;
+}
+section.trans_origin:nth-of-type(5) article {
+  transform: rotateX(120deg);
+  transform-origin: center top;
+}
+section.trans_origin:nth-of-type(6) article {
+  transform: rotateX(120deg);
+  transform-origin: center bottom;
+}
+
+/* transition :: 전환효과 */
+section.transition {
+  perspective: 800px;
+}
+  section.transition article {
+  background-color: darkcyan;
+  /* transition-property : transform background-color;
+  transition-duration: 1s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(.51,-0.63,.34,.93); */
+  /* 가속도 미리보기 : https://cubic-bezier.com 
+    - linear : 등속
+    - ease : 균일 가속
+    - ease-in : 시작 때 가속
+    - ease-in-out : 시작과 끝에 가속
+    - ease-out : 끝날 때 가속
+  */
+
+  /* transition 축약문 */
+  /* transition: all 1s cubic-bezier(.51,-0.63,.34,.93) 0s; */
+  /* transition: all 1s ease 0s; */
+  transition: 1s;
+
+}
+section.transition:hover article {
+  transform: rotateY(360deg);
+  background-color: red;
+}
+
+/* animation :: 자동모션 */
+section.animation_auto {
+  width: 400px;
+  height: 400px;
+}
+section.animation_auto article {
+  background-color:darkslateblue;
+  /* margin: 100px auto; */
+  /* animation-name: rotation;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 2;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-play-state: running; /*기본값 생략*/
+  animation: rotation 2s linear 0s infinite;
+}
+section.animation_auto article:hover {
+  animation-play-state: paused;
+}
+
+
+@keyframes rotation {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+

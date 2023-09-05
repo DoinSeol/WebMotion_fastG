@@ -1,0 +1,20 @@
+
+article {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  margin: 100px auto;
+}
+
+
+@media screen and (max-width: 900px) {
+  article {
+    background-color: orange;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  article {
+    background-color: aqua;
+  }
+}

@@ -1,0 +1,73 @@
+main {
+  width: 100%;
+  height: 300px;
+  background-color: lightcyan;
+}
+
+main section {
+  width: 100%;
+  height: 100%;
+  border: 5px dashed #666;
+  box-sizing: border-box;
+  
+  display: inline-flex;    /* 너비 : 자식요소너비*/
+  display: flex;           /* 너비 : 100% */
+  
+  /*flex-direction: column;  /* 세로배치 */
+  /*flex-direction: row;     /* 기본값 : 가로배치 */
+  /*flex-wrap: nowrap;       /* 기본값 : 줄바꿈X */
+  /*flex-wrap: wrap;         /* 줄바꿈O */
+  flex-flow: row nowrap; /* row(기본값) :가로정렬 / column : 세로정렬 */ 
+
+  justify-content: flex-start;
+  /* 중심축배치 : flex-start(시작) / center(중심) / flex-end(끝) / space-btween(좌우배치) 
+                 / space-around(자식좌우여백균등) / space-evenly(여백균등분배) */
+  
+  align-content: center;  /* nowrap인 경우 적용 안됨 -> align-items 사용*/
+  align-items: center;    /* nowrpa인 경우 적용 */
+}
+
+main section article {
+  background-color: skyblue;
+  border: 1px solid #333;
+  box-sizing: border-box;
+
+  font-size: 50px; 
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+/* flex 정렬 */
+main section.basic { justify-content: space-evenly; }
+main section.basic article { width: 100px; height: 100px; justify-content: center; }
+
+
+/* order : flex 자식요소 순서 지정 */
+main section.order article { width: 100px; height: 100px; justify-content: center;}
+section.order article:nth-of-type(1) { order: 2; }
+section.order article:nth-of-type(2) { order: 3; }
+section.order article:nth-of-type(3) { order: 1; }
+
+
+/* flex-grow : flex 자식요소 내부 여백 비율 지정 */
+main section.grow article { background-color: lightseagreen;}
+section.grow article:nth-of-type(1) { flex-grow: 1; }
+section.grow article:nth-of-type(2) { flex-grow: 2; }
+section.grow article:nth-of-type(3) { flex-grow: 3; }
+
+
+/* flex-grow : flex 자식요소 내부 여백 비율 지정 */
+main section.shrink article { width: 600px; background-color: plum;}
+section.shrink article:nth-of-type(1) { flex-shrink: 1; }
+section.shrink article:nth-of-type(2) { flex-shrink: 2; }
+section.shrink article:nth-of-type(3) { flex-shrink: 3; }
+
+
+/* flex : flex 자식요소의 박스 크기 비율 지정 */
+main section.flex article { background-color: lightsalmon;}
+section.flex article:nth-of-type(1) { flex: 1; }
+section.flex article:nth-of-type(2) { flex: 2; }
+section.flex article:nth-of-type(3) { flex: 3; }
