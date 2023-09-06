@@ -1,0 +1,8 @@
+@mixin button ($wid:100px, $bg:$bgButA_L){
+  display: block; width: $wid; height: 34px; border-radius: 20px; background-color: $bg; 
+  font-size: 12px; color: $colorButA_L; display: flex; justify-content: center; align-items: center;
+}
+
+
+
+
