@@ -33,11 +33,15 @@ body { background: $bgBody;}
     h2 {
       font-size: 30px; font-family: "arial"; 
       // color: $colorH2; 
-      @if $bgItem
+      @if $bgItem == #fff {color: #333}
+      @else {color: #fff}
       margin-bottom: 15px;
     }
     p {
-      font-size: 14px; line-height: 1.3; font-family: "arial"; color: $colorP; 
+      font-size: 14px; line-height: 1.3; font-family: "arial"; 
+      // color: $colorP;
+      @if $bgItem == #fff {color: #333}
+      @else {color: #fff}
       margin-bottom: 20px;
     }
     // if 조건문 사용
