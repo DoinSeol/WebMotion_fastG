@@ -8,7 +8,7 @@ body {background-color: #000; font: 17px/1.4 "orbitron"; letter-spacing: 1px; co
 .wrap {
   width: 100%; height: 100vh; overflow: hidden; 
   position: relative;
-  perspective: 1300px;
+  perspective: 1300px; //animation과 함께주면 오류유발 상위부모에 주기
   
   > video {
     width: 100%; height: 100%;

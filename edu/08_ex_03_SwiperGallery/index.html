@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swiper</title>
+  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/4292081a82.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+  <main class="swiper">
+    <section class="swiper-wrapper">
+      <article class="swiper-slide">1</article>
+      <article class="swiper-slide">2</article>
+      <article class="swiper-slide">3</article>
+      <article class="swiper-slide">4</article>
+      <article class="swiper-slide">5</article>
+
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </section>
+  </main>
+
+  <script>
+    const swiper = new Swiper("main", {
+      speed: 500, //스와이프시 패널이 넘어가는 속도
+      loop: true, //스와이프를 순환
+      direction: "horizontal", //기본값:horizontal 세로:vertical
+      grabCursor: true,
+      slidesPerView: "3", //해당갯수단위로 패널 뷰 기본값:auto(css로 너비 지정 가능 )
+      spaceBetween: 30, //패널사이 간격(단위:px생략)
+      centeredSlides: true, //활성화 패널 가운데 배치
+
+      pagination: {
+        el: ".swiper-pagination", // 페이지네이션 버튼 추가
+        clickable: true //클릭가능여부 설정
+      },
+
+      navigation: {
+        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next',
+      }
+
+
+    });
+  </script>
+</body>
+</html>
